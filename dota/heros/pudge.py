@@ -1,21 +1,9 @@
-from typing import List
+from common.dot_dictionary import DotDict
 from dota.magics.hook import HookMagic
-from ._base import Hero
-from common.dot_dictionary import  DotDict
+from dota.heros._base import Hero
+
+
 class Pudge(Hero):
     def __init__(self):
+        super(Pudge, self).__init__()
         self.magics = DotDict({'hook': HookMagic()})
-
-
-"""
-
-dota
-  +- heros
-      + pudge
-        + pudge.py
-  + magics
-    + hook.py
-
-
-
-"""
