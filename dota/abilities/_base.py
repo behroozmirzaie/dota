@@ -1,7 +1,7 @@
 from abc import ABC
 
 
-class AbstractMagic(ABC):
+class AbstractAbility(ABC):
     @property
     def name(self):
         raise NotImplementedError
@@ -14,19 +14,24 @@ class AbstractMagic(ABC):
     def max_level(self):
         raise NotImplementedError
 
+    @property
+    def magic_type(self):
+        raise NotImplementedError
 
-class BaseMagic(AbstractMagic):
+
+class BaseAbility(AbstractAbility):
     def __init__(self):
         self._level = 0
         self._max_level = 0
         self._name = None
+        self._magic_type = None
 
     @property
-    def level(self):
+    def level(self) -> int:
         return self._level
 
     @property
-    def name(self):
+    def name(self) -> str:
         return self._name
 
     @name.setter
@@ -34,16 +39,27 @@ class BaseMagic(AbstractMagic):
         self._name = value.lower()
 
     @property
-    def max_level(self):
+    def max_level(self) -> int:
         return self._max_level
 
+    @max_level.setter
+    def max_level(self, value: int):
+        self._max_level = value
+
+    @property
+    def magic_type(self) -> str:
+        return self._magic_type
+
+    @magic_type.setter
+    def magic_type(self, value):
+        self._magic_type = value
+
     def level_up(self):
-        print("you call this level up method")
         if self.level < self.max_level:
             self._level += 1
 
 
-class ActiveMagic(BaseMagic):
+class ActiveAbility(BaseAbility):
     def __init__(self):
         super().__init__()
         self._mana: int = 0
@@ -54,8 +70,12 @@ class ActiveMagic(BaseMagic):
 
     @mana.setter
     def mana(self, value: int):
-        self._mana = value
+        self._mana = int(value)
 
 
-class PassiveMagic(BaseMagic):
+class PassiveAbility(BaseAbility):
+    ...
+
+
+class AutoCastAbility(BaseAbility):
     ...
