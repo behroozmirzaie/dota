@@ -57,5 +57,5 @@ class ActiveMagic(BaseMagic):
         self._mana = value
 
 
-class PassiveMagic(BaseException):
+class PassiveMagic(BaseMagic):
     ...
