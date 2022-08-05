@@ -2,9 +2,11 @@ from dota.heros.pudge import Pudge
 
 pudge = Pudge()
 
-print(f"current pudge hook level {pudge.abilities.hook.level}")
+print(
+    f"current pudge hook level is:{pudge.abilities.hook.level} and base damage is: {pudge.abilities.hook.base_damage}")
 pudge.abilities.hook.level_up()
-print(f"current pudge hook level {pudge.abilities.hook.level}")
-print(pudge.abilities.hook.cast_range)
-print(pudge.abilities.hook.search_radius)
-print(pudge.abilities.hook.hot_key)
+print(
+    f"current pudge hook level is:{pudge.abilities.hook.level} and base damage is: {pudge.abilities.hook.base_damage}")
+print(f"current pudge rot level is:{pudge.abilities.rot.level} and base damage is: {pudge.abilities.rot.base_damage}")
+pudge.abilities.rot.level_up()
+print(f"current pudge rot level is:{pudge.abilities.rot.level} and base damage is: {pudge.abilities.rot.base_damage}")

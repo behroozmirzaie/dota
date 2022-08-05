@@ -20,3 +20,7 @@ class ActiveAbility(BaseAbility):
     @property
     def hot_key(self):
         raise NotImplementedError
+
+    @property
+    def base_damage(self):
+        raise NotImplementedError

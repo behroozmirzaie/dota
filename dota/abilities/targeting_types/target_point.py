@@ -9,6 +9,7 @@ class TargetPoint(ActiveAbility):
         self._cast_range: int = 0
         self._search_radius: int = 0
         self._hot_key: str = ''
+        self._base_damage: int = 0
 
     @property
     def mana(self):
@@ -41,3 +42,11 @@ class TargetPoint(ActiveAbility):
     @hot_key.setter
     def hot_key(self, value: str):
         self._hot_key = str(value)
+
+    @property
+    def base_damage(self) -> int:
+        return self._base_damage
+
+    @base_damage.setter
+    def base_damage(self, value: int):
+        self._base_damage = int(value)

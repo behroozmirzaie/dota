@@ -1,17 +1,17 @@
-from dota.abilities.targeting_types.target_point import TargetPoint
+from dota.abilities.targeting_types.toggle import Toggle
 
 
-class HookAbility(TargetPoint):
-    _BASE_MANA: int = 100
-    _DEFAULT_NAME: str = "HOOK"
+class RotAbility(Toggle):
+    _BASE_MANA: int = 0
+    _DEFAULT_NAME: str = "rot"
     _MAX_LEVEL: int = 4
-    _BASE_DAMAGE: int = 120
+    _BASE_DAMAGE: int = 30
     _BASE_CAST_RANGE: int = 1200
-    _BASE_SEARCH_RADIUS = 100
-    _DEFAULT_HOT_KEY = 'Q'
+    _BASE_SEARCH_RADIUS = 250
+    _DEFAULT_HOT_KEY = 'w'
 
     def __init__(self):
-        super(HookAbility, self).__init__()
+        super(RotAbility, self).__init__()
         self.mana = self._BASE_MANA
         self.name = self._DEFAULT_NAME
         self.max_level = self._MAX_LEVEL
@@ -23,6 +23,5 @@ class HookAbility(TargetPoint):
 
     def level_up(self):
         if self.level < self._MAX_LEVEL:
-            super(HookAbility, self).level_up()
-            self.mana += self.mana * 0.3
-            self.base_damage += self.base_damage * 0.5
+            super(RotAbility, self).level_up()
+            self.base_damage += self.base_damage
