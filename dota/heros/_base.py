@@ -3,7 +3,7 @@ class Hero:
         self._name = None
         self._speed = 100
         self.abilities = {}
-
+        
     @property
     def name(self) -> str:
         return self._name
