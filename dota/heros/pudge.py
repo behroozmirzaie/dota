@@ -1,5 +1,5 @@
 from common.dot_dictionary import DotDict
-from dota.abilities.hook import HookAbility
+from dota.abilities.spell_abilities.hook import HookAbility
 from dota.heros._base import Hero
 
 

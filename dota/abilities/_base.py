@@ -59,23 +59,25 @@ class BaseAbility(AbstractAbility):
             self._level += 1
 
 
-class ActiveAbility(BaseAbility):
-    def __init__(self):
-        super().__init__()
-        self._mana: int = 0
-
-    @property
-    def mana(self):
-        return self._mana
-
-    @mana.setter
-    def mana(self, value: int):
-        self._mana = int(value)
 
 
-class PassiveAbility(BaseAbility):
-    ...
 
 
-class AutoCastAbility(BaseAbility):
-    ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
