@@ -15,7 +15,7 @@ class RotAbility(Toggle):
         self.mana = self._BASE_MANA
         self.name = self._DEFAULT_NAME
         self.max_level = self._MAX_LEVEL
-        self.magic_type = "PURE"
+        self.magic_type = "MAGICAL"
         self.cast_range = self._BASE_CAST_RANGE
         self.search_radius = self._BASE_SEARCH_RADIUS
         self.hot_key = self._DEFAULT_HOT_KEY
