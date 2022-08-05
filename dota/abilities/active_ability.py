@@ -16,3 +16,7 @@ class ActiveAbility(BaseAbility):
     @property
     def cast_range(self):
         raise NotImplementedError
+
+    @property
+    def hot_key(self):
+        raise NotImplementedError
