@@ -1,10 +1,4 @@
-from dota.heros.pudge import Pudge
+from dota.initial_normal_heroes import heroes
 
-pudge = Pudge()
-
-
-print(f"pudge flesh heap level:{pudge.abilities.flesh_heap.level} base damage: {pudge.abilities.flesh_heap.level}")
-print(f"pudge flesh heap level:{pudge.abilities.rot.level} base damage: {pudge.abilities.flesh_heap.level}")
-print(f"pudge flesh heap level:{pudge.abilities.flesh_heap.level} base damage: {pudge.abilities.flesh_heap.level}")
-pudge.abilities.flesh_heap.level_up()
-
+pudge = heroes.Pudge
+print(pudge.abilities.hook.range)

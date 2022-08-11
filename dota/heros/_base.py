@@ -20,6 +20,8 @@ class Hero:
         self._mana_regen = 0
         self._day_vision = 0
         self._night_vision = 0
+        self._xp = 0
+        self._level = 1
 
     @property
     def name(self) -> str:
@@ -144,3 +146,19 @@ class Hero:
     @night_vision.setter
     def night_vision(self, value: int):
         self._night_vision = value
+
+    @property
+    def xp(self) -> int:
+        return self._xp
+
+    @xp.setter
+    def xp(self, value: int):
+        self._xp = value
+
+    @property
+    def level(self) -> int:
+        return self._level
+
+    @level.setter
+    def level(self, value: int):
+        self._level = value
