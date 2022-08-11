@@ -12,3 +12,4 @@ class Pudge(Hero):
         self.abilities = DotDict({'hook': HookAbility(), 'rot': RotAbility(), 'flesh_heap': FleshHeapAbility(),
                                   'dismember': DismemberAbility()})
         self.name = "PUDGE"
+

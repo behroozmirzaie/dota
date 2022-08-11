@@ -3,7 +3,7 @@ from dota.abilities._base import BaseAbility
 
 class ActiveAbility(BaseAbility):
     """
-    Active abilities are targeted in different ways, depending on the effects of the ability.
+    Active _abilities are targeted in different ways, depending on the effects of the ability.
     """
 
     def __init__(self):
