@@ -25,6 +25,8 @@ class BaseAbility(AbstractAbility):
         self._max_level = 0
         self._name = None
         self._magic_type = None
+        self._is_ultimate = False
+        self._is_upgrade_by_aghanim = False
 
     @property
     def level(self) -> int:
@@ -54,30 +56,22 @@ class BaseAbility(AbstractAbility):
     def magic_type(self, value):
         self._magic_type = value
 
+    @property
+    def is_ultimate(self) -> bool:
+        return self._is_ultimate
+
+    @is_ultimate.setter
+    def is_ultimate(self, value: bool):
+        self._is_ultimate = value
+
+    @property
+    def is_upgrade_by_aghanim(self) -> bool:
+        return self._is_upgrade_by_aghanim
+
+    @is_upgrade_by_aghanim.setter
+    def is_upgrade_by_aghanim(self, value: bool):
+        self._is_upgrade_by_aghanim = value
+
     def level_up(self):
         if self.level < self.max_level:
             self._level += 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
