@@ -3,25 +3,28 @@ class Hero:
 
     def __init__(self) -> None:
         self._name = None
-        self._speed = 100
+        self._attack_speed = 100
         self._abilities = {}
         self._armor = 0
-        self._intelligence = 0
-        self._strength = 0
+        self._intelligence = 0.0
+        self._strength = 0.0
+        self._agility = 0.0
         self._kind = None
         self._attack_range = 0
         self._projectile_attack = 0
-        self._attack_damage = 1
-        self._attack_rate = 0
+        self._attack_damage = (0, 0)
+        self._attack_rate = 0.0
         self._movement_speed = 0
+        self._turn_speed = 0.0
         self._health = 0
         self._mana = 0
-        self._health_regen = 0
-        self._mana_regen = 0
+        self._health_regen = 0.0
+        self._mana_regen = 0.0
         self._day_vision = 0
         self._night_vision = 0
         self._xp = 0
         self._level = 1
+        self._collision_size = 0
 
     @property
     def name(self) -> str:
@@ -40,20 +43,28 @@ class Hero:
         self._armor = value
 
     @property
-    def intelligence(self) -> int:
+    def intelligence(self) -> float:
         return self._intelligence
 
     @intelligence.setter
-    def intelligence(self, value: int):
+    def intelligence(self, value: float):
         self._intelligence = value
 
     @property
-    def strength(self) -> int:
+    def strength(self) -> float:
         return self._strength
 
     @strength.setter
-    def strength(self, value: int):
+    def strength(self, value: float):
         self._strength = value
+
+    @property
+    def agility(self) -> float:
+        return self._agility
+
+    @agility.setter
+    def agility(self, value: float):
+        self._agility = value
 
     @property
     def kind(self) -> str:
@@ -67,12 +78,16 @@ class Hero:
     def attack_range(self) -> int:
         return self._attack_range
 
+    @attack_range.setter
+    def attack_range(self, value: int):
+        self._attack_range = value
+
     @property
-    def attack_damage(self) -> int:
+    def attack_damage(self) -> tuple:
         return self._attack_damage
 
     @attack_damage.setter
-    def attack_damage(self, value: int):
+    def attack_damage(self, value: tuple):
         self._attack_damage = value
 
     @property
@@ -84,11 +99,11 @@ class Hero:
         self._projectile_attack = value
 
     @property
-    def attack_rate(self) -> int:
+    def attack_rate(self) -> float:
         return self._attack_rate
 
     @attack_rate.setter
-    def attack_rate(self, value: str):
+    def attack_rate(self, value: float):
         self._attack_rate = value
 
     @property
@@ -116,19 +131,19 @@ class Hero:
         self._mana = value
 
     @property
-    def health_regen(self) -> int:
+    def health_regen(self) -> float:
         return self._health_regen
 
     @health_regen.setter
-    def health_regen(self, value: int):
+    def health_regen(self, value: float):
         self._health_regen = value
 
     @property
-    def mana_regen(self) -> int:
+    def mana_regen(self) -> float:
         return self._mana_regen
 
     @mana_regen.setter
-    def mana_regen(self, value: int):
+    def mana_regen(self, value: float):
         self._mana_regen = value
 
     @property
@@ -162,3 +177,30 @@ class Hero:
     @level.setter
     def level(self, value: int):
         self._level = value
+
+    @property
+    def attack_speed(self) -> int:
+        return self._attack_speed
+
+    @attack_speed.setter
+    def attack_speed(self, value: int):
+        self._attack_speed = value
+
+    @property
+    def turn_speed(self) -> float:
+        return self._turn_speed
+
+    @turn_speed.setter
+    def turn_speed(self, value: float):
+        self._turn_speed = value
+
+    @property
+    def collision_size(self) -> int:
+        return self._collision_size
+
+    @collision_size.setter
+    def collision_size(self, value: int):
+        self._collision_size = value
+
+    def level_up(self):
+        raise NotImplementedError
